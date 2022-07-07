@@ -1,0 +1,93 @@
+//--COLORS--
+$general-red: #EC0606
+$general-grey: #F6F7F9
+$general-grey-text: #4D515C
+
+// пример подключения - @include btn
+@mixin btn-product
+  width: 161px
+  height: 40px
+  display: flex
+  justify-content: center
+  align-items: center
+  border-radius: 4px
+  background-color: $general-red
+  font: 500 16px/24px "Rubik"
+  color: #fff
+  text-align: center
+  padding: 8px 16px 8px 20px
+  text-decoration: none
+  cursor: pointer
+  border: none
+  border: unset
+  outline: none
+  &:hover
+    background-color: #C70909
+    cursor: pointer
+
+@mixin btn-white
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 142px
+  height: 40px
+  border: 1px solid $general-red
+  box-sizing: border-box
+  border-radius: 4px
+  font: 500 14px/20px 'Rubik'
+  background-color: #fff
+  color: $general-red
+  &:hover
+    border: none
+    background-color: $general-red
+    color: #fff
+    cursor: pointer
+
+@mixin btn-product-link
+  @include btn-white
+  color: $general-red !important
+  // background-color: #fff
+  &:hover
+    background-color: #C70909
+    color: #fff !important
+
+@mixin btn-white-black-border
+  @include btn-white
+  border: 1px solid #000
+  color: #000
+  &:hover
+    background-color: #C70909
+
+@mixin social-btn
+  width: 172px
+  height: 34px
+  border-radius: 5px
+  display: flex
+  align-items: center
+  justify-content: center
+  font: 500 14px/17px 'Rubik'
+  cursor: pointer
+  border: none
+  border-radius: 5px 0 0 5px
+  background-color: #fff
+  color: #4a76a8
+  border: 2px solid #4a76a8
+
+
+@mixin horizontal-scrollbars($size-width, $size-height, $foreground-color, $background-color: mix($foreground-color, white,  80%))
+  // For Google Chrome
+  &::-webkit-scrollbar
+    width:  $size-width
+    height: 4px
+  &::-webkit-scrollbar-thumb
+    background: $foreground-color
+  &::-webkit-scrollbar-track
+    background: $background-color
+  // For Internet Explorer
+  &
+    scrollbar-face-color: $foreground-color
+    scrollbar-track-color: $background-color
+
+@mixin hover
+  color: #EC0606
+  cursor: pointer

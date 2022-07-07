@@ -1,0 +1,196 @@
+@import "@/sass/vars"
+
+.feedback-form-about-container
+  display: grid
+  grid-template-columns: 593px 623px
+  grid-column-gap: 171px
+  align-items: center
+  justify-content: center
+  min-height: 540px
+  padding: 25px 0
+  height: fit-content
+  background-color: #969EA9
+  color: #fff
+  @media (max-width: 1530px)
+    grid-template-columns: 1fr 1fr
+    grid-column-gap: 20px
+    padding: 0 30px
+  @media (max-width: 1230px)
+    grid-template-columns: 1fr
+    height: fit-content
+    padding-top: 20px
+  .feedback-form-about
+    display: flex
+    flex-direction: column
+    @media (max-width: 1230px)
+      width: 600px
+      margin: 0 auto
+    @media (max-width: 650px)
+      width: 100%
+    h3
+      color: #FFFFFF
+      font: 500 30px/36px "Rubik"
+    .feedback-form-about-top
+      display: flex
+      margin: 16px 0
+      justify-content: space-between
+      @media (max-width: 650px)
+        flex-direction: column
+    .feedback-form-about-input
+      display: flex
+      flex-direction: column
+      @media (max-width: 650px)
+        margin-top: 15px
+      .field
+        display: flex
+        flex-direction: column
+        label
+          margin-bottom: 8px
+          font: 500 14px/20px "Rubik"
+        input, textarea, .feedback-form-about-input-phone
+          width: 280px
+          height: 40px
+          background-color: #fff
+          border-radius: 4px
+          color: #969EA9
+          outline: none
+          font: 400 14px/24px "Rubik"
+          border: 1px solid #fff
+          padding: 8px 0 8px 16px
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button
+          -webkit-appearance: none
+          margin: 0
+
+        /* Firefox */
+        input[type=number]
+          -moz-appearance: textfield
+      label
+        margin-bottom: 8px
+        font: 500 14px/20px "Rubik"
+      input, textarea, .feedback-form-about-input-phone
+        width: 280px
+        height: 40px
+        background-color: #fff
+        border-radius: 4px
+        color: #969EA9
+        outline: none
+        font: 400 14px/24px "Rubik"
+        border: 1px solid #fff
+        padding: 8px 0 8px 16px
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button
+        -webkit-appearance: none
+        margin: 0
+
+      /* Firefox */
+      input[type=number]
+        -moz-appearance: textfield
+
+      textarea, .error-textarea
+        width: 100% !important
+        height: 136px !important
+        resize: none !important
+      .error
+        border: 1px solid $general-red
+    .feedback-form-about-input-email
+      width: 100%
+      margin: 16px 0
+      input
+        width: 100% !important
+    .feedback-form-message
+      font: 400 27px/27px 'Rubik'
+      margin-top: 25px
+    .feedback-form-about-personal
+      display: flex
+      align-items: center
+      font: 500 14px/20px 'Rubik'
+      margin-top: 20px
+      label.check
+        display: flex
+        cursor: pointer
+        align-items: center
+        input
+          display: none
+          width: auto
+          &.error
+            border: 2px solid $general-red
+        input[type="checkbox"]
+          &:checked + .checkbox::after
+            position: absolute
+            content: ""
+            background-image: url('@/components/feedback-form/assets/check.svg')
+            background-size: auto
+            width: 20px
+            height: 20px
+            padding: 0
+            margin: 0
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+      .checkbox
+        position: relative
+        width: 20px
+        height: 20px
+        border: 1px solid #fff
+        border-radius: 5px
+        flex-shrink: 0
+        &.error
+          margin: 0
+          padding: 0
+          border: 1px solid $general-red
+      p
+        font: 500 14px/17px 'Rubik'
+        color: #fff
+        margin-left: 8px
+      a
+        color: #fff
+        text-decoration: underline
+    button
+      @include btn-product
+      width: 177px
+      height: 52px
+      margin-top: 24px
+  .feedback-form-about-cart
+    width: 100%
+    height: 100%
+    //background-image: url('@/modules/ModuleAbout/assets/feedback-form-cart.png')
+    position: relative
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+    @media (max-width: 1230px)
+      height: 330px
+    @media (max-width: 650px)
+      height: 200px
+    .feedback-form-about-cart-elems
+      display: grid
+      grid-template-columns: 1fr 1fr
+      grid-gap: 29px 110px
+      position: absolute
+      top: calc(50% - 47px)
+      left: calc(50% - 175px)
+      @media (max-width: 650px)
+        grid-gap: 15px 20px
+        top: calc(50% - 60px)
+        left: calc(50% - 170px)
+      .feedback-form-about-cart-elem
+        display: flex
+        align-items: center
+        .feedback-form-about-cart-elem-image
+          width: 44px
+          height: 44px
+          margin-right: 16px
+        .feedback-form-about-cart-elem-image-vk
+          //background-image: url('@/modules/ModuleAbout/assets/vk.svg')
+        .feedback-form-about-cart-elem-image-ok
+          //background-image: url('@/modules/ModuleAbout/assets/ok.svg')
+        .feedback-form-about-cart-elem-image-yt
+          //background-image: url('@/modules/ModuleAbout/assets/youtube.svg')
+        .feedback-form-about-cart-elem-text
+          p
+            color: #fff
+            &:first-child
+              font: 500 20px/28px 'Rubik'
+            &:last-child
+              font: 400 14px/24px 'Rubik'

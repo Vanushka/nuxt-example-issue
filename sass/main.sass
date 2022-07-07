@@ -1,0 +1,245 @@
+@import "vars"
+@import "apptimizm-ui/dist/apptimizm-ui.css"
+
+html, body, #__nuxt
+  height: 100%
+.default-layout
+  position: relative
+  // height: 100vh
+  display: flex
+  flex-direction: column
+  height: 100%
+  @media (max-width: 1024px)
+    height: unset
+.main-container
+  max-width: 1510px
+  margin: 0 auto
+  @media (max-width: 1515px)
+    padding: 0 10px
+h3
+  font: 500 24px/28px 'Rubik'
+  color: #000000
+
+.sub-title
+  font: 500 30px/36px 'Rubik'
+  color: #000000
+
+.main-container-content, .main-container-content-ext
+  max-width: 1510px
+  min-height: 500px
+  width: 100%
+  margin: 0 auto
+  padding: 17px 16px 70px 16px
+  flex: 1 0 auto
+  .page-title
+    font: 500 30px/36px 'Rubik'
+    color: #000
+  .page-subtitle
+    font: 500 18px/24px 'Rubik'
+  .main-content-two-columns
+    display: grid
+    grid-template-columns: 1fr 333px
+    grid-column-gap: 32px
+    margin-top: 32px
+    @media (max-width: 1415px)
+      grid-template-columns: 1fr
+    .tags-container
+      margin-bottom: 32px
+  .main-content-two-columns-right
+    display: flex
+    flex-direction: column
+    @media (max-width: 1415px)
+      flex-direction: column
+    .main-content-two-columns-right-elem
+      /*
+        Стили для подложки правой колонки, типо subcribe form на странице news и деталке новостей
+        используются в нескольких местах, если нужно закастомить стили, то лучше сделать во внутреннем компоненте
+        */
+      width: 356px
+      height: auto
+      border: 1px solid #E7EBF1
+      box-sizing: border-box
+      box-shadow: -1px 11px 22px rgba(132, 135, 137, 0.18)
+      border-radius: 14px
+      padding: 24px 38px 48px 38px
+      @media (max-width: 389px)
+        width: 100%
+      a, span
+        font: 500 16px/24px 'Rubik'
+        color: #000
+        &:not(:last-child)
+          margin-bottom: 16px
+        &:hover
+          color: $general-red
+          cursor: pointer
+      @media (max-width: 1415px)
+        display: none
+    .main-content-two-columns-right-elem-sticky
+      position: sticky
+      top: 150px
+      @media (max-width: 1415px)
+        top: 0
+        position: relative
+
+  .main-phone
+    font-weight: 500
+    color: $general-red
+    margin-bottom: 1px
+
+//ниже контейнер для страниц, где нужны блоки на всю ширину экрана
+//чтоб использовать автоматом стиль .main-container-content-ext для страница, нужно layout с дефолтного изменить на "ext-default"
+//контент, который должен остаться оцентрованным по максимально ширине в 1510 нужно обернуть в див с классом .main-container-content-ext-wrap
+//пример посмотреть можно на странице about
+.main-container-content-ext
+  max-width: 100%
+  padding: 0
+  .main-container-content-ext-wrap
+    max-width: 1510px
+    margin: 0 auto
+    padding: 17px 16px 70px 16px
+
+a
+  &:hover
+    // color: $general-red !important
+    cursor: pointer
+
+.site-paragraph
+  font: normal 16px/28px 'Rubik'
+  color: #4D515C
+
+.show-more
+  border: 1px solid #EC0606
+  box-sizing: border-box
+  border-radius: 4px
+  color: #EC0606
+  cursor: pointer
+  font-size: 16px
+  font-weight: 500
+  line-height: 24px
+  max-width: 250px
+  padding: 8px 16px
+  text-align: center
+
+// стилизация пагинации из библиотеки apptimizm-ui
+.pagination
+  align-items: center
+  display: flex
+  justify-content: center
+  margin: 32px
+  @media (max-width: 570px)
+    display: none !important
+  .router-link, .router-link-active, .page
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 28px
+    height: 32px
+    color: #969EA9
+    font: normal 14px/24px 'Rubik'
+    margin: 0px 16px
+    &:hover, &.active
+      background-color: $general-red
+      border-radius: 4px
+      cursor: pointer
+      color: #fff
+  .next, .prev
+    width: unset
+    &:hover
+      background-color: unset
+    &::before
+      @include btn-white
+      content: 'Вперед'
+  .next:hover::before, .prev:hover::before
+    background-color: $general-red
+    color: #fff
+  .prev
+    &::before
+      content: 'Назад'
+
+// ПОПАПЫ
+.popup-background
+  background: rgba(0, 0, 0, 0.75)
+  bottom: 0
+  left: 0
+  position: fixed
+  right: 0
+  top: 0
+  z-index: 100
+.with-nds
+  background: #B6BEC6
+  border-radius: 12px
+  color: #ffffff
+  display: inline-block
+  font-size: 10px
+  font-weight: 400
+  height: 20px
+  margin-left: 8px
+  padding: 4px
+
+// СКРОЛЛБАРЫ
+::-webkit-scrollbar
+  border-radius: 4px
+  width: 8px
+::-webkit-scrollbar-button
+  display: none
+::-webkit-scrollbar-thumb
+  border-radius: 4px
+  background: #999
+::-webkit-scrollbar-thumb:hover
+  background: #666
+::-webkit-scrollbar-track
+  border-radius: 4px
+  background: #f0f0f0
+::-webkit-scrollbar-track-piece
+  background: #f0f0f0
+::-webkit-scrollbar-corner
+  background: #999
+::-webkit-resizer
+  background: #999
+
+.grey-item
+  background-color: #F6F7F9
+  padding: 32px 32px
+  font: normal 16px/28px 'Rubik'
+  color: #4D515C
+  &:not(:last-child)
+    margin-bottom: 24px
+  @media (max-width: 400px)
+    padding: 32px 6px
+  .grey-item-top
+    display: flex
+    align-items: center
+    margin-bottom: 20px
+    .grey-item-logo
+      width: 48px
+      height: 48px
+    .grey-item-title
+      margin-left: 19px
+      font: 500 20px/28px 'Rubik'
+      color: #000
+      @media (max-width: 470px)
+        font-size: 14px
+  .grey-item-content
+    color: #4D515C
+    margin-left: 66px
+    @media (max-width: 768px)
+      margin-left: 0
+    p
+      &:first-child
+        margin-bottom: 6px
+
+.mark-red
+  color: #EC0606
+  margin: 0
+  border-bottom: 1px solid #EC0606
+
+
+// Баннеры
+.catalog-banner
+  width: 100%
+  height: 187px
+  // background-image: url('@/images/catalog-banner.png')
+  background-size: contain
+  background-position: center center
+  background-repeat: no-repeat
+  margin: 16px 0 50px 0

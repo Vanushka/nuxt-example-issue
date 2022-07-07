@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "@vee-validate/rules": "^4.5.11",
+    "ai-switcher-translit": "^1.0.2",
+    "apptimizm-ui": "0.1.37",
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.7",
+    "lodash": "^4.17.21",
+    "maska": "^1.5.0",
+    "moment": "latest",
+    "nuxt": "npm:nuxt3@latest",
+    "vee-validate": "^4.5.11",
+    "vue-ui-preloader": "^1.2.1",
+    "yup": "^0.32.11",
+    "yup-locale-ru": "^1.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/style-resources": "1.2.1",
+    "node-sass": "latest",
+    "sass": "^1.43.4",
+    "sass-loader": "latest"
+  }
+}
