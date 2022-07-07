@@ -19,6 +19,6 @@ yarn start
 ```
 
 ## Result
-The error appears when we run: yarn build
+The error appears when we run: yarn start
 
 Start the development server on http://localhost:3000
