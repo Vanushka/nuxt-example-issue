@@ -8,6 +8,9 @@ export default defineNuxtConfig({
   buildModules: [
     './modules/ModuleIndex/index.ts'
   ],
+  build: {
+    transpile: ['yup', 'lodash']
+  },
   css: [
     '@/sass/reset.sass',
     '@/sass/fonts.sass',
